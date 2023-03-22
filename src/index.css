@@ -8,6 +8,10 @@
         @apply font-bold text-3xl font-ubuntu;
     }
 
+    span{
+        @apply font-bold text-3xl font-ubuntu;
+    }
+
     button{
         @apply font-poppins;
     }
