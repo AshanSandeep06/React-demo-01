@@ -9,6 +9,10 @@ type counterState = {
 export default class Counter extends Component<counterProps, counterState> {
     constructor(props: counterProps){
         super(props);
+
+        this.state = {
+            count: 0
+        }
     }
 
     render(): React.ReactNode {
