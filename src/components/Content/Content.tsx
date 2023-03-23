@@ -1,14 +1,19 @@
 import {Route, Routes} from "react-router-dom";
+import Home from "../../pages/Home";
+import About from "../../pages/About";
+import Contact from "../../pages/Contact";
+import Projects from "../../pages/Projects";
+import Services from "../../pages/Services";
 
 export default function Content() {
     return (
         <section id="content">
             <Routes>
-                <Route path="/"></Route>
-                <Route path="/About"></Route>
-                <Route path="/Services"></Route>
-                <Route path="/Projects"></Route>
-                <Route path="/Contact"></Route>
+                <Route path="/" element={<Home/>}></Route>
+                <Route path="/About" element={<About/>}></Route>
+                <Route path="/Services" element={<Services/>}></Route>
+                <Route path="/Projects" element={<Projects/>}></Route>
+                <Route path="/Contact" element={<Contact/>}></Route>
             </Routes>
         </section>
     );
