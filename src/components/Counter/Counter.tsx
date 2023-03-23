@@ -16,6 +16,26 @@ export default class Counter extends Component<counterProps, counterState> {
 
         // Binding Traditional(normal) functions to the Component
         this.increaseCount = this.increaseCount.bind(this);
+
+        console.log("Counter - Constructor Called..!");
+    }
+
+    componentDidMount() {
+        console.log("Counter - Component Mounted..");
+    }
+
+    componentDidUpdate() {
+        console.log("Counter - Component Updated..");
+    }
+
+    componentWillUnmount() {
+        console.log("Counter - Component Unmounted(Destroyed)..");
+    }
+
+    componentDidCatch(error:Error, errorInfo:React.ErrorInfo) {
+        console.log("Counter - Component Did Catch..");
+        console.log(error, errorInfo);
+        console.log("------------------------------------------");
     }
 
     // Normal Functions / Traditional Functions
@@ -33,7 +53,7 @@ export default class Counter extends Component<counterProps, counterState> {
         return (
             <section className="mt-3.5 ml-4 flex flex-col gap-3">
                 <div className="flex gap-2.5">
-                    <h1>Counter : </h1>
+                    <h1>Counters : </h1>
                     <span>{this.state.count}</span>
                 </div>
 
