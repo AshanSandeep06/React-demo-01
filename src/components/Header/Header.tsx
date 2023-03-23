@@ -15,14 +15,10 @@ export default function Header() {
             <div className="w-1/2 h-full pr-5">
                 <ul className="h-full flex items-center justify-end gap-[60px]">
                     <NavLink to={"/"} className={({isActive}) => isActive ? activeLink : normalLink}>Home</NavLink>
-                    <NavLink to={"/About"}
-                             className={({isActive}) => isActive ? activeLink : normalLink}>About</NavLink>
-                    <NavLink to={"/Services"}
-                             className={({isActive}) => isActive ? activeLink : normalLink}>Services</NavLink>
-                    <NavLink to={"/Projects"}
-                             className={({isActive}) => isActive ? activeLink : normalLink}>Projects</NavLink>
-                    <NavLink to={"/Contact"}
-                             className={({isActive}) => isActive ? activeLink : normalLink}>Contact</NavLink>
+                    <NavLink to={"/About"} className={({isActive}) => isActive ? activeLink : normalLink}>About</NavLink>
+                    <NavLink to={"/Services"} className={({isActive}) => isActive ? activeLink : normalLink}>Services</NavLink>
+                    <NavLink to={"/Projects"} className={({isActive}) => isActive ? activeLink : normalLink}>Projects</NavLink>
+                    <NavLink to={"/Contact"} className={({isActive}) => isActive ? activeLink : normalLink}>Contact</NavLink>
                 </ul>
             </div>
         </section>
