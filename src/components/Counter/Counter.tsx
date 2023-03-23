@@ -14,6 +14,7 @@ export default class Counter extends Component<counterProps, counterState> {
             count: 0
         };
 
+        // Binding Traditional(normal) functions to the Component
         this.increaseCount = this.increaseCount.bind(this);
     }
 
@@ -23,6 +24,7 @@ export default class Counter extends Component<counterProps, counterState> {
     }
 
     // Arrow Functions
+    // Arrow Functions should not be manually bind by us, Component will automatically bind the arrow functions itself
     decreaseCount = () => {
         this.setState({count: this.state.count - 1});
     }
