@@ -1,13 +1,7 @@
-import React, {Component} from 'react';
+export default function Content() {
+    return (
+        <section id="content">
 
-class Content extends Component {
-    render() {
-        return (
-            <div>
-
-            </div>
-        );
-    }
+        </section>
+    );
 }
-
-export default Content;
