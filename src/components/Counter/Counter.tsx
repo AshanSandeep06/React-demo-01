@@ -37,11 +37,11 @@ export default class Counter extends Component<counterProps, counterState> {
 
                 <div className="text-white flex gap-4">
                     <button disabled={this.state.count === 10}
-                        onClick={this.increaseCount}
+                            onClick={this.increaseCount}
                             className="rounded border border-green-800 text-green-800 px-3 py-1.5 hover:bg-green-800 hover:text-white">Increase
                     </button>
                     <button disabled={this.state.count === 0}
-                        onClick={this.decreaseCount}
+                            onClick={this.decreaseCount}
                             className="rounded border border-red-800 text-red-800 px-3 py-1.5 hover:bg-red-800 hover:text-white">Decrease
                     </button>
                 </div>
