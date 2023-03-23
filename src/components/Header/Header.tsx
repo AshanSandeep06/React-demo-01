@@ -12,8 +12,9 @@ export default function Header() {
                 <ul className="h-full flex items-center justify-end gap-[60px]">
                     <li>Home</li>
                     <li>About</li>
-                    <li>Contact</li>
                     <li>Services</li>
+                    <li>Projects</li>
+                    <li>Contact</li>
                 </ul>
             </div>
         </section>
