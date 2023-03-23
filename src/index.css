@@ -15,4 +15,8 @@
     button{
         @apply font-poppins;
     }
+
+    li{
+        @apply font-poppins;
+    }
 }
