@@ -6,7 +6,7 @@ type counterState = {
     count: number;
 }
 
-export default class Counter extends Component {
+export default class Counter extends Component<counterProps, counterState> {
     render(): React.ReactNode {
         return (
             <section className="mt-3.5 ml-4 flex flex-col gap-3">
