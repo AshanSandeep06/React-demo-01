@@ -1,5 +1,11 @@
 import React, {Component} from "react";
 
+type counterProps = {}
+
+type counterState = {
+    count: number;
+}
+
 export default class Counter extends Component {
     render(): React.ReactNode {
         return (
