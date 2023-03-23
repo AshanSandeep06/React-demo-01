@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Counter from "./components/Counter";
 import Header from "./components/Header"
+import Content from "./components/Content";
 
 function App() {
     return (
-        // <Counter />
-        <Header/>
+        <>
+            <Header/>
+            <Content/>
+        </>
     );
 }
 

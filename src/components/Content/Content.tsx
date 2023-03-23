@@ -7,7 +7,7 @@ import Services from "../../pages/Services";
 
 export default function Content() {
     return (
-        <section id="content">
+        <section id="content" className="mt-20">
             <Routes>
                 <Route path="/" element={<Home/>}></Route>
                 <Route path="/About" element={<About/>}></Route>
