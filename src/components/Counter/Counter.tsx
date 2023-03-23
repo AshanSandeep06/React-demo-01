@@ -12,7 +12,7 @@ export default class Counter extends Component<counterProps, counterState> {
 
         this.state = {
             count: 0
-        }
+        };
     }
 
     render(): React.ReactNode {
