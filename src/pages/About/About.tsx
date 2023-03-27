@@ -5,7 +5,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import Card from "../../components/Card";
 
-class About extends Component {
+export default class About extends Component {
   render() {
     return (
       <section className="px-12 pt-[18px] pb-10 flex flex-col gap-y-4">
@@ -29,5 +29,3 @@ class About extends Component {
     );
   }
 }
-
-export default About;
