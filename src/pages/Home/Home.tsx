@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Home extends Component {
   render() {
     return (
-      <section className="px-12 pt-4 pb-10 flex flex-col gap-y-4">
+      <section className="px-12 pt-[18px] pb-10 flex flex-col gap-y-4">
         <div className="border border-gray-600 mt-3">
           <h3 className="text-center mt-2.5 text-xl font-semibold font-ubuntu">
             Lecture Day-01
