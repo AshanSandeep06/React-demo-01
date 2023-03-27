@@ -29,7 +29,7 @@ export default class Login extends Component {
             />
 
             <button className="mt-2 bg-blue-900 text-white py-2 px-6 rounded">
-              Login <LoginIcon />
+              Login <LoginIcon className="pl-1" />
             </button>
           </div>
         </form>
