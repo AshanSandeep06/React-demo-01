@@ -6,7 +6,7 @@ type PostProps = {
   title: string;
   description: string;
   lecturerName?: string;
-  hoursCount?: string;
+  hoursCount?: number;
   tags: string[];
 };
 
@@ -17,7 +17,7 @@ export default class Post extends Component<PostProps, PostState> {
     return (
       <div className="border border-gray-600 mt-3">
         <h3 className="text-center mt-2.5 text-xl font-semibold font-ubuntu">
-          {this.props.title + " - " + this.props.hoursCount}
+          {this.props.title}
         </h3>
 
         <p className="text-center my-3 mx-5 font-poppins font-light">
@@ -37,8 +37,8 @@ export default class Post extends Component<PostProps, PostState> {
         </p>
 
         <aside className="mb-5 mx-5 flex space-x-5 pt-2">
-          {this.props.tags.map((tagText) => (
-            <Tag tag={tagText} />
+          {this.props.tags.map((tagText, index) => (
+            <Tag key={index} tag={tagText} />
           ))}
         </aside>
       </div>
