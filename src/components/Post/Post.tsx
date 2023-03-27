@@ -21,18 +21,6 @@ export default class Post extends Component<PostProps, PostState> {
         </h3>
 
         <p className="text-center my-3 mx-5 font-poppins font-light">
-          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, id
-          maiores vel ab laborum at animi quia soluta, dolor nobis dolore
-          possimus itaque perferendis fugit deleniti alias odio molestiae
-          odit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, id
-          maiores vel ab laborum at animi quia soluta, dolor nobis dolore
-          possimus itaque perferendis fugit deleniti alias odio molestiae
-          odit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, id
-          maiores vel ab laborum at animi quia soluta, dolor nobis dolore
-          possimus itaque perferendis fugit deleniti alias odio molestiae
-          odit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, id
-          maiores vel ab laborum at animi quia soluta, dolor nobis dolore
-          possimus itaque perferendis fugit deleniti alias odio molestiae odit. */}
           {this.props.description}
         </p>
 
