@@ -42,63 +42,6 @@ class About extends Component {
               </p>
             </div>
           </div>
-
-          <div className="border border-gray-600 text-center px-4 pb-5 pt-3">
-            <div className="flex flex-col items-center gap-2">
-              <AddAlertIcon />
-
-              <h3 className="text-center text-2xl font-medium font-ubuntu mb-2">
-                Card 2
-              </h3>
-            </div>
-
-            <div className="flex justify-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                velit, facilis quaerat accusamus tenetur laborum ipsam nemo
-                doloribus sequi mollitia aut ullam dolores tempora quos
-                veritatis quasi aliquid libero ea.
-              </p>
-            </div>
-          </div>
-
-          <div className="border border-gray-600 text-center px-4 pb-5 pt-3">
-            <div className="flex flex-col items-center gap-2">
-              <AddCircleIcon />
-
-              <h3 className="text-center text-2xl font-medium font-ubuntu mb-2">
-                Card 3
-              </h3>
-            </div>
-
-            <div className="flex justify-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                velit, facilis quaerat accusamus tenetur laborum ipsam nemo
-                doloribus sequi mollitia aut ullam dolores tempora quos
-                veritatis quasi aliquid libero ea.
-              </p>
-            </div>
-          </div>
-
-          <div className="border border-gray-600 text-center px-4 pb-5 pt-3">
-            <div className="flex flex-col items-center gap-2">
-              <CheckCircleIcon />
-
-              <h3 className="text-center text-2xl font-medium font-ubuntu mb-2">
-                Card 4
-              </h3>
-            </div>
-
-            <div className="flex justify-center">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                velit, facilis quaerat accusamus tenetur laborum ipsam nemo
-                doloribus sequi mollitia aut ullam dolores tempora quos
-                veritatis quasi aliquid libero ea.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
     );
