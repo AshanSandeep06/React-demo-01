@@ -42,7 +42,7 @@ class Contact extends Component {
               variant="outlined"
               placeholder="Enter your valid Email here"
               fullWidth={true}
-              required
+              required={true}
             />
             <TextField
               label="Message"
