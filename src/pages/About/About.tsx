@@ -3,6 +3,7 @@ import AcUnitIcon from "@mui/icons-material/AcUnit";
 import AddAlertIcon from "@mui/icons-material/AddAlert";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Card from "../../components/Card";
 
 class About extends Component {
   render() {
@@ -24,7 +25,8 @@ class About extends Component {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          
+          <Card />
+          <Card />
         </div>
       </section>
     );
