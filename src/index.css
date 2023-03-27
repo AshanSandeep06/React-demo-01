@@ -4,19 +4,19 @@
 @tailwind variants;
 
 @layer base {
-    h1 {
-        @apply font-bold text-3xl font-ubuntu;
-    }
+  h1 {
+    @apply font-bold text-3xl font-ubuntu;
+  }
 
-    span{
-        @apply font-bold text-3xl font-ubuntu;
-    }
+  span {
+    @apply font-bold text-3xl font-ubuntu;
+  }
 
-    button{
-        @apply font-poppins;
-    }
+  button {
+    @apply font-poppins;
+  }
 
-    li{
-        @apply font-poppins;
-    }
+  li {
+    @apply font-poppins;
+  }
 }
