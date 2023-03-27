@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material";
 import React, { Component } from "react";
 
 class Contact extends Component {
@@ -31,6 +32,33 @@ class Contact extends Component {
             ducimus nisi animi voluptas atque rerum nam odit aut. Voluptate
             facere placeat libero molestiae nostrum!
           </p>
+        </div>
+
+        <div className="mt-3">
+          <form className="w-full py-8 px-32 flex flex-col gap-3 items-center">
+            <TextField
+              label="Email"
+              type="email"
+              variant="outlined"
+              placeholder="Enter your valid Email here"
+              fullWidth={true}
+              required
+            />
+            <TextField
+              label="Message"
+              type="text"
+              variant="outlined"
+              placeholder="Enter your Message here"
+              fullWidth={true}
+              multiline
+              minRows={5}
+              maxRows={Infinity}
+              required
+            />
+            <button className="mt-2 w-1/6 bg-blue-900 text-white py-2 rounded">
+              <h6>Submit</h6>
+            </button>
+          </form>
         </div>
       </section>
     );
