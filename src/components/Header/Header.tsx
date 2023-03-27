@@ -1,26 +1,54 @@
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import UserImage from "../../assets/UserImage.png";
 
 export default function Header() {
-    const activeLink = "border-b-2";
-    const normalLink = "";
+  const activeLink = "border-b-2";
+  const normalLink = "";
 
-    return (
-        <section id="header" className="flex w-full h-20 bg-blue-800 shadow-lg shadow-black/20 text-white fixed top-0">
-            <div className="w-1/2 h-full flex items-center gap-2.5 pl-2">
-                <img src={UserImage} alt="UserImage" className="w-10 h-10"/>
-                <h1 className="h-max mb-[3px]">My Profile</h1>
-            </div>
+  return (
+    <section
+      id="header"
+      className="flex w-full h-20 bg-blue-800 shadow-lg shadow-black/20 text-white fixed top-0"
+    >
+      <div className="w-1/2 h-full flex items-center gap-2.5 pl-2">
+        <img src={UserImage} alt="UserImage" className="w-10 h-10" />
+        <h1 className="h-max mb-[3px]">My Profile</h1>
+      </div>
 
-            <div className="w-1/2 h-full pr-5">
-                <ul className="h-full flex items-center justify-end gap-[60px]">
-                    <NavLink to={"/"} className={({isActive}) => isActive ? activeLink : normalLink}>Home</NavLink>
-                    <NavLink to={"/About"} className={({isActive}) => isActive ? activeLink : normalLink}>About</NavLink>
-                    <NavLink to={"/Services"} className={({isActive}) => isActive ? activeLink : normalLink}>Services</NavLink>
-                    <NavLink to={"/Projects"} className={({isActive}) => isActive ? activeLink : normalLink}>Projects</NavLink>
-                    <NavLink to={"/Contact"} className={({isActive}) => isActive ? activeLink : normalLink}>Contact</NavLink>
-                </ul>
-            </div>
-        </section>
-    );
+      <div className="w-1/2 h-full pr-5">
+        <ul className="h-full flex items-center justify-end gap-[60px]">
+          <NavLink
+            to={"/"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to={"/About"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to={"/Contact"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            Contact
+          </NavLink>
+          <NavLink
+            to={"/Services"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to={"/Projects"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            Projects
+          </NavLink>
+        </ul>
+      </div>
+    </section>
+  );
 }
