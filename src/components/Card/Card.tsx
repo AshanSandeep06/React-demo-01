@@ -4,6 +4,18 @@ import AddAlertIcon from "@mui/icons-material/AddAlert";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
+type CardDetails = {
+  id: string;
+  title: string;
+  description: string;
+};
+
+type CardProps = {};
+
+type CardState = {
+  cardList: CardDetails[];
+};
+
 export default class Card extends Component {
   render() {
     return (
