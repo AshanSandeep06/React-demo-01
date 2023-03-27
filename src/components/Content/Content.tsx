@@ -5,15 +5,17 @@ import About from "../../pages/About";
 import Contact from "../../pages/Contact";
 import Projects from "../../pages/Projects";
 import Services from "../../pages/Services";
+import Login from "../../pages/Login";
 
 export default function Content() {
   return (
     <>
       <section id="content" className="mt-20">
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
           <Route path="/About" element={<About />}></Route>
           <Route path="/Contact" element={<Contact />}></Route>
+          <Route path="/" element={<Login />}></Route>
         </Routes>
       </section>
     </>

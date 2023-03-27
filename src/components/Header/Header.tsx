@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import UserImage from "../../assets/UserImage.png";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function Header() {
   const activeLink = "border-b-2";
@@ -18,7 +19,7 @@ export default function Header() {
       <div className="w-1/2 h-full pr-5">
         <ul className="h-full flex items-center justify-end gap-[60px]">
           <NavLink
-            to={"/"}
+            to={"/Home"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             Home
@@ -30,12 +31,16 @@ export default function Header() {
           >
             About
           </NavLink>
-          
+
           <NavLink
             to={"/Contact"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             Contact
+          </NavLink>
+
+          <NavLink to={"/"}>
+            <LogoutIcon />
           </NavLink>
         </ul>
       </div>
