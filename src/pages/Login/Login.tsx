@@ -29,7 +29,7 @@ export default class Login extends Component {
               required={true}
             />
 
-            <Link to={"/"}>
+            <Link to={"/Home"}>
             <button className="mt-2 bg-blue-900 text-white py-2 px-6 rounded">
               Login <LoginIcon className="pl-1" />
             </button>
