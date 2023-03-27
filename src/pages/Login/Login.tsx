@@ -1,6 +1,7 @@
 import { TextField } from "@mui/material";
 import React, { Component } from "react";
 import LoginIcon from "@mui/icons-material/Login";
+import { Link } from "react-router-dom";
 
 export default class Login extends Component {
   render() {
@@ -28,9 +29,11 @@ export default class Login extends Component {
               required={true}
             />
 
+            <Link to={"/"}>
             <button className="mt-2 bg-blue-900 text-white py-2 px-6 rounded">
               Login <LoginIcon className="pl-1" />
             </button>
+            </Link>
           </div>
         </form>
       </section>
