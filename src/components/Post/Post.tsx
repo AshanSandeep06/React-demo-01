@@ -1,6 +1,17 @@
 import { Component } from "react";
 
-export default class Post extends Component {
+type PostProps = {
+  id: string;
+  title: string;
+  description: string;
+  lecturerName?: string;
+  hoursCount?: string;
+  tags: string[];
+};
+
+type PostState = {};
+
+export default class Post extends Component<PostProps, PostState> {
   render(): React.ReactNode {
     return (
       <div className="border border-gray-600 mt-3">
