@@ -5,7 +5,7 @@
 
 @layer base {
   h1 {
-    @apply font-bold text-3xl font-ubuntu;
+    @apply text-xl sm:text-2xl md:justify-center font-bold font-poppins;
   }
 
   span {
