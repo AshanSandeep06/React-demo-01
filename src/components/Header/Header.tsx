@@ -35,18 +35,6 @@ export default function Header() {
           >
             Contact
           </NavLink>
-          <NavLink
-            to={"/Services"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to={"/Projects"}
-            className={({ isActive }) => (isActive ? activeLink : normalLink)}
-          >
-            Projects
-          </NavLink>
         </ul>
       </div>
     </section>
