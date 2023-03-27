@@ -59,7 +59,7 @@ class Home extends Component<HomeProps, HomeState> {
     return (
       <section className="px-12 pt-[18px] pb-10 flex flex-col gap-y-4">
         {/* <Post id="1" title="sds" description="sdsds" tags={["Intro", "Type-Script"]}/> */}
-        
+
         {this.state.postList.map((post) => (
           <Post
             id={post.id}

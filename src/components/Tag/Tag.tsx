@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 
 type TagProps = {
-    tag: string
-}
+  tag: string;
+};
 
-type TagState = {}
+type TagState = {};
 
 export default class Tag extends Component<TagProps, TagState> {
   render() {
