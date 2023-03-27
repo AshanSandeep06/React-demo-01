@@ -23,12 +23,14 @@ export default function Header() {
           >
             Home
           </NavLink>
+
           <NavLink
             to={"/About"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
           >
             About
           </NavLink>
+          
           <NavLink
             to={"/Contact"}
             className={({ isActive }) => (isActive ? activeLink : normalLink)}
