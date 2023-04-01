@@ -1,14 +1,6 @@
 import React, { Component } from "react";
 import Post from "../../components/Post";
-
-type PostDetails = {
-  id: string;
-  title: string;
-  description: string;
-  lecturerName?: string;
-  hoursCount?: number;
-  tags: string[];
-};
+import { PostDetails } from "../../types/PostDetails";
 
 type HomeProps = {};
 
