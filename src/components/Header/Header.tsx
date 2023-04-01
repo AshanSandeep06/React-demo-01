@@ -39,6 +39,13 @@ export default function Header() {
             Contact
           </NavLink>
 
+          <NavLink
+            to={"/Profile"}
+            className={({ isActive }) => (isActive ? activeLink : normalLink)}
+          >
+            Profile
+          </NavLink>
+
           <NavLink to={"/"}>
             <LogoutIcon />
           </NavLink>
