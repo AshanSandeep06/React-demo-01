@@ -6,6 +6,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { Divider, TextField } from "@mui/material";
+import { type } from "os";
 
 type ProfileProps = {};
 
@@ -69,6 +70,21 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Submitted");
+
+    const { title, description, hoursCount, lecturerName, tagString } =
+      this.state;
+
+    let newPost = {
+      title: title,
+      description: description,
+      hoursCount: hoursCount,
+      lecturerName: lecturerName,
+      tags: tagString,
+    };
+  };
+
+  convertTagStringToArray = (tagString: string): string[] => {
+    return tagString.split(",");
   };
 
   handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
