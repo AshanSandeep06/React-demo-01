@@ -1,69 +1,205 @@
-import React, { Component } from "react";
-import { PostDetails } from "../../types/PostDetails";
+import { ChangeEvent, Component } from "react";
+import Header from "../../components/Header";
 import Post from "../../components/Post";
+import { PostDetails } from "../../types/PostDetails";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import PostAddIcon from "@mui/icons-material/PostAdd";
+import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import { Divider, TextField } from "@mui/material";
 
-type HomeProps = {};
+type ProfileProps = {};
 
-type HomeState = {
+type ProfileState = {
   postList: PostDetails[];
+  isClickedCreateNewPost: boolean;
+  title: string;
+  description: string;
+  hoursCount: number;
+  lecturerName: string;
+  tagString: string;
 };
 
-export default class Profile extends Component<HomeProps, HomeState> {
-  constructor(props: HomeProps) {
+export default class Profile extends Component<ProfileProps, ProfileState> {
+  constructor(props: ProfileProps) {
     super(props);
 
     this.state = {
+      title: "",
+      description: "",
+      hoursCount: 0,
+      lecturerName: "",
+      tagString: "",
+      isClickedCreateNewPost: false,
       postList: [
         {
           id: "1",
           title: "Lecture Day 01",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.",
-          lecturerName: "Sanu",
-          hoursCount: 6,
-          tags: ["Day-01", "Sanu", "Spring", "Spring-Boot"],
+            "Lecture D01 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+          hoursCount: 8,
+          tags: ["intro", "typescript"],
         },
-
         {
           id: "2",
           title: "Lecture Day 02",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.",
+            "Lecture D02 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+          hoursCount: 6,
           lecturerName: "Chanu",
-          hoursCount: 5,
-          tags: ["Day-02", "Chanu", "Intro", "Type-Script"],
+          tags: ["react", "tailwind"],
         },
-
         {
           id: "3",
           title: "Lecture Day 03",
           description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet voluptatum alias explicabo esse, sequi eius labore accusamus ipsam nobis quo reiciendis fugit deleniti omnis nemo, exercitationem magnam inventore pariatur.",
-          lecturerName: "Yasindu",
-          hoursCount: 6,
-          tags: ["Day-03", "Yasindu", "OOP", "Threads"],
+            "Lecture D03 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+          tags: ["Lifecycle", "rounting", "structure"],
         },
       ],
     };
   }
 
+  handleClickCreateNewPost = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      isClickedCreateNewPost: !prevState.isClickedCreateNewPost,
+    }));
+  };
+
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log("Submitted");
+  };
+
+  handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log("Changed");
+    console.log(event.target.value);
+
+    // desctructuring assignment
+    const { name, value } = event.target;
+
+    this.setState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
   render() {
     return (
-      <section className="px-12 pt-[18px] pb-10 flex flex-col gap-y-4">
-        {/* <Post id="1" title="sds" description="sdsds" tags={["Intro", "Type-Script"]}/> */}
+      <>
+        <Header />
+        <div className="mt-20 py-6 px-32">
+          <div className="w-full flex flex-col space-y-1">
+            {!this.state.isClickedCreateNewPost ? (
+              <>
+                <div
+                  className="cursor-pointer w-full p-4 bg-blue-800 text-white rounded flex justify-between items-center"
+                  onClick={this.handleClickCreateNewPost}
+                >
+                  <h6>Create New Post</h6>
+                  <AddCircleIcon />
+                </div>
+                <div
+                  className="cursor-pointer p-8 bg-white rounded text-slate-400 flex justify-center items-center space-x-3 border border-slate-400"
+                  onClick={this.handleClickCreateNewPost}
+                >
+                  <PostAddIcon />
+                  <h6>Your New Post</h6>
+                </div>
+              </>
+            ) : (
+              <>
+                <div
+                  className="cursor-pointer w-full p-4 bg-blue-800 text-white rounded flex justify-between items-center"
+                  onClick={this.handleClickCreateNewPost}
+                >
+                  <h6>Discard Post</h6>
+                  <RemoveCircleIcon />
+                </div>
+                <div className="w-full cursor-pointer p-8 bg-white rounded text-slate-400 flex justify-center items-center space-x-3 border border-slate-400">
+                  <form
+                    className="flex flex-col space-y-3 w-full"
+                    onSubmit={this.handleSubmit}
+                  >
+                    <TextField
+                      label="Post Title"
+                      type="text"
+                      variant="outlined"
+                      name="title"
+                      placeholder="Enter post title"
+                      onChange={this.handleInputChange}
+                      value={this.state.title}
+                      fullWidth={true}
+                      required
+                    />
+                    <TextField
+                      label="Post Description"
+                      type="text"
+                      variant="outlined"
+                      name="description"
+                      placeholder="Enter post description"
+                      value={this.state.description}
+                      onChange={this.handleInputChange}
+                      fullWidth={true}
+                      multiline
+                      minRows={5}
+                      maxRows={Infinity}
+                      required
+                    />
+                    <TextField
+                      label="Hours Count"
+                      type="number"
+                      variant="outlined"
+                      name="hoursCount"
+                      placeholder="Enter hours count"
+                      onChange={this.handleInputChange}
+                      value={this.state.hoursCount}
+                      fullWidth={true}
+                    />
+                    <TextField
+                      label="Lecturer Name"
+                      type="text"
+                      variant="outlined"
+                      placeholder="Enter Lecturer Name"
+                      name="lecturerName"
+                      onChange={this.handleInputChange}
+                      value={this.state.lecturerName}
+                      fullWidth={true}
+                    />
+                    <TextField
+                      label="Tags (Comma separated tags)"
+                      type="text"
+                      variant="outlined"
+                      name="tagString"
+                      placeholder="Enter comma separated tags"
+                      onChange={this.handleInputChange}
+                      value={this.state.tagString}
+                      fullWidth={true}
+                      required
+                    />
+                    <button className="py-2 bg-blue-800 text-white rounded">
+                      <h6>Publish Post</h6>
+                    </button>
+                  </form>
+                </div>
+              </>
+            )}
+          </div>
 
-        {this.state.postList.map((post) => (
-          <Post
-            id={post.id}
-            key={post.id}
-            title={post.title}
-            description={post.description}
-            lecturerName={post.lecturerName}
-            hoursCount={post.hoursCount}
-            tags={post.tags}
-          />
-        ))}
-      </section>
+          <Divider className="!my-5" />
+
+          {this.state.postList.map((post) => (
+            <Post
+              key={post.id}
+              title={post.title}
+              description={post.description}
+              tags={post.tags}
+              hoursCount={post.hoursCount}
+              lecturerName={post.lecturerName}
+            />
+          ))}
+        </div>
+      </>
     );
   }
 }

@@ -2,7 +2,7 @@ import { Component } from "react";
 import Tag from "../Tag";
 
 type PostProps = {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   lecturerName?: string;

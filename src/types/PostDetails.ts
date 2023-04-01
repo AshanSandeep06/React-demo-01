@@ -1,5 +1,5 @@
 export type PostDetails = {
-    id: string;
+    id?: string;
     title: string;
     description: string;
     lecturerName?: string;
