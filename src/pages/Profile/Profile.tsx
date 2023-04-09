@@ -6,7 +6,6 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { Divider, TextField } from "@mui/material";
-import { type } from "os";
 
 type ProfileProps = {};
 
@@ -23,7 +22,6 @@ type ProfileState = {
 export default class Profile extends Component<ProfileProps, ProfileState> {
   constructor(props: ProfileProps) {
     super(props);
-
     this.state = {
       title: "",
       description: "",
@@ -71,32 +69,66 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
     event.preventDefault();
     console.log("Submitted");
 
+    console.log(this.state);
+
+    // destructuring assignment
     const { title, description, hoursCount, lecturerName, tagString } =
       this.state;
 
+    let tagsArray = this.convertTagStringToArray(tagString);
+
     let newPost = {
+      id: "4",
       title: title,
       description: description,
       hoursCount: hoursCount,
       lecturerName: lecturerName,
-      tags: tagString,
+      tags: tagsArray,
     };
+
+    // Here, you should pass the post object to back-end for the stroring purposes
+
+    // According to the response from bac-end, you should add the post object to the list
+
+    this.setState((prevState) => ({
+      postList: [newPost, ...prevState.postList],
+    }));
+
+    this.clearState();
   };
 
   convertTagStringToArray = (tagString: string): string[] => {
-    return tagString.split(",");
+    if (tagString !== "") {
+      return tagString.split(",").map((tag) => tag.trim());
+    }
+    return [];
   };
 
   handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("Changed");
-    console.log(event.target.value);
-
     // desctructuring assignment
-    const { name, value } = event.target;
+    const { name, value, type } = event.target;
+
+    const inputValue = type === "number" ? parseInt(value) : value;
+
+    console.log(typeof inputValue);
+    if (name === "hoursCount" && Number(inputValue) < 0) {
+      return;
+    }
 
     this.setState((prevState) => ({
       ...prevState,
       [name]: value,
+    }));
+  };
+
+  clearState = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      title: "",
+      description: "",
+      hoursCount: 0,
+      lecturerName: "",
+      tagString: "",
     }));
   };
 
@@ -126,7 +158,7 @@ export default class Profile extends Component<ProfileProps, ProfileState> {
             ) : (
               <>
                 <div
-                  className="cursor-pointer w-full p-4 bg-blue-800 text-white rounded flex justify-between items-center"
+                  className="cursor-pointer w-full p-4b g-blue-800 text-white rounded flex justify-between items-center"
                   onClick={this.handleClickCreateNewPost}
                 >
                   <h6>Discard Post</h6>
